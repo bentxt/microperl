@@ -1,0 +1,692 @@
+doio.c:144:4: warning: implicit declaration of function 'open' is invalid in C99 [-Wimplicit-function-declaration]
+fd=PerlLIO_open3(name,rawmode,rawperm);
+   ^
+./iperlsys.h:803:41: note: expanded from macro 'PerlLIO_open3'
+#define PerlLIO_open3(file, flag, perm) open((file), (flag), (perm))
+                                        ^
+doio.c:172:1: warning: implicit declaration of function 'close' is invalid in C99 [-Wimplicit-function-declaration]
+PerlLIO_close(fd);
+^
+./iperlsys.h:785:28: note: expanded from macro 'PerlLIO_close'
+#define PerlLIO_close(fd)               close((fd))
+                                        ^
+doio.c:276:4: warning: implicit declaration of function 'atoi' is invalid in C99 [-Wimplicit-function-declaration]
+fd=atoi(name);
+   ^
+doio.c:308:4: warning: implicit declaration of function 'dup' is invalid in C99 [-Wimplicit-function-declaration]
+fd=PerlLIO_dup(fd);
+   ^
+./iperlsys.h:786:27: note: expanded from macro 'PerlLIO_dup'
+#define PerlLIO_dup(fd)                 dup((fd))
+                                        ^
+doio.c:313:1: warning: implicit declaration of function 'close' is invalid in C99 [-Wimplicit-function-declaration]
+PerlLIO_close(fd);
+^
+./iperlsys.h:785:28: note: expanded from macro 'PerlLIO_close'
+#define PerlLIO_close(fd)               close((fd))
+                                        ^
+doio.c:454:1: warning: implicit declaration of function 'dup2' is invalid in C99 [-Wimplicit-function-declaration]
+PerlLIO_dup2(PerlIO_fileno(fp),fd);
+^
+./iperlsys.h:787:33: note: expanded from macro 'PerlLIO_dup2'
+#define PerlLIO_dup2(fd1, fd2)          dup2((fd1), (fd2))
+                                        ^
+doio.c:618:7: warning: implicit declaration of function 'unlink' is invalid in C99 [-Wimplicit-function-declaration]
+(void)UNLINK(SvPVX(sv));
+      ^
+./perl.h:1946:16: note: expanded from macro 'UNLINK'
+#define UNLINK PerlLIO_unlink
+               ^
+./iperlsys.h:809:31: note: expanded from macro 'PerlLIO_unlink'
+#define PerlLIO_unlink(file)            unlink((file))
+                                        ^
+doio.c:619:5: warning: implicit declaration of function 'link' is invalid in C99 [-Wimplicit-function-declaration]
+if (link(PL_oldname,SvPVX(sv)) < 0) {
+    ^
+doio.c:633:5: warning: implicit declaration of function 'unlink' is invalid in C99 [-Wimplicit-function-declaration]
+if (UNLINK(PL_oldname) < 0) {
+    ^
+./perl.h:1946:16: note: expanded from macro 'UNLINK'
+#define UNLINK PerlLIO_unlink
+               ^
+./iperlsys.h:809:31: note: expanded from macro 'PerlLIO_unlink'
+#define PerlLIO_unlink(file)            unlink((file))
+                                        ^
+doio.c:851:5: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+if (PerlIO_get_cnt(IoIFP(io)) > 0) /* cheat a little,since */
+    ^
+./perlsdio.h:108:29: note: expanded from macro 'PerlIO_get_cnt'
+#define PerlIO_get_cnt(f)               (abort(),0)
+                                         ^
+doio.c:851:5: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+./perlsdio.h:108:29: note: expanded from macro 'PerlIO_get_cnt'
+#define PerlIO_get_cnt(f)               (abort(),0)
+                                         ^
+doio.c:1217:1: warning: implicit declaration of function 'execvp' is invalid in C99 [-Wimplicit-function-declaration]
+PerlProc_execvp(tmps,PL_Argv);
+^
+./iperlsys.h:1088:31: note: expanded from macro 'PerlProc_execvp'
+#define PerlProc_execvp(c, a)   execvp((c), (a))
+                                ^
+doio.c:1225:1: warning: implicit declaration of function 'write' is invalid in C99 [-Wimplicit-function-declaration]
+PerlLIO_write(fd,(void*)&e,sizeof(int));
+^
+./iperlsys.h:811:39: note: expanded from macro 'PerlLIO_write'
+#define PerlLIO_write(fd, buf, count)   write((fd), (buf), (count))
+                                        ^
+doio.c:1226:1: warning: implicit declaration of function 'close' is invalid in C99 [-Wimplicit-function-declaration]
+PerlLIO_close(fd);
+^
+./iperlsys.h:785:28: note: expanded from macro 'PerlLIO_close'
+#define PerlLIO_close(fd)               close((fd))
+                                        ^
+doio.c:1307:15: warning: implicit declaration of function 'dup2' is invalid in C99 [-Wimplicit-function-declaration]
+                if (!*t && (dup2(1,2) != -1)) {
+                            ^
+doio.c:1313:6: warning: implicit declaration of function 'execl' is invalid in C99 [-Wimplicit-function-declaration]
+            PerlProc_execl(PL_sh_path, "sh", "-c", cmd, (char*)0);
+            ^
+./iperlsys.h:1085:39: note: expanded from macro 'PerlProc_execl'
+#define PerlProc_execl(c,w,x,y,z)                                       \
+                                                                        ^
+doio.c:1330:2: warning: implicit declaration of function 'execvp' is invalid in C99 [-Wimplicit-function-declaration]
+        PerlProc_execvp(PL_Argv[0],PL_Argv);
+        ^
+./iperlsys.h:1088:31: note: expanded from macro 'PerlProc_execvp'
+#define PerlProc_execvp(c, a)   execvp((c), (a))
+                                ^
+doio.c:1342:3: warning: implicit declaration of function 'write' is invalid in C99 [-Wimplicit-function-declaration]
+                PerlLIO_write(fd, (void*)&e, sizeof(int));
+                ^
+./iperlsys.h:811:39: note: expanded from macro 'PerlLIO_write'
+#define PerlLIO_write(fd, buf, count)   write((fd), (buf), (count))
+                                        ^
+doio.c:1343:3: warning: implicit declaration of function 'close' is invalid in C99 [-Wimplicit-function-declaration]
+                PerlLIO_close(fd);
+                ^
+./iperlsys.h:785:28: note: expanded from macro 'PerlLIO_close'
+#define PerlLIO_close(fd)               close((fd))
+                                        ^
+doio.c:1495:7: warning: implicit declaration of function 'unlink' is invalid in C99 [-Wimplicit-function-declaration]
+                if (UNLINK(s))
+                    ^
+./perl.h:1946:16: note: expanded from macro 'UNLINK'
+#define UNLINK PerlLIO_unlink
+               ^
+./iperlsys.h:809:31: note: expanded from macro 'PerlLIO_unlink'
+#define PerlLIO_unlink(file)            unlink((file))
+                                        ^
+doio.c:1502:11: warning: implicit declaration of function 'unlink' is invalid in C99 [-Wimplicit-function-declaration]
+                    if (UNLINK(s))
+                        ^
+./perl.h:1946:16: note: expanded from macro 'UNLINK'
+#define UNLINK PerlLIO_unlink
+               ^
+./iperlsys.h:809:31: note: expanded from macro 'PerlLIO_unlink'
+#define PerlLIO_unlink(file)            unlink((file))
+                                        ^
+20 warnings generated.
+mg.c:265:1: warning: add explicit braces to avoid dangling else [-Wdangling-else]
+else if (mg->mg_len == HEf_SVKEY)
+^
+mg.c:336:7: warning: implicit declaration of function 'atoi' is invalid in C99 [-Wimplicit-function-declaration]
+paren=atoi(mg->mg_ptr);
+      ^
+mg.c:544:7: warning: implicit declaration of function 'atoi' is invalid in C99 [-Wimplicit-function-declaration]
+paren=atoi(mg->mg_ptr);
+      ^
+mg.c:1163:1: warning: implicit declaration of function 'atoi' is invalid in C99 [-Wimplicit-function-declaration]
+atoi(MgPV(mg,n_a)),FALSE);
+^
+mg.c:1731:7: warning: implicit declaration of function 'setuid' is invalid in C99 [-Wimplicit-function-declaration]
+(void)PerlProc_setuid(PL_uid);
+      ^
+./iperlsys.h:1100:28: note: expanded from macro 'PerlProc_setuid'
+#define PerlProc_setuid(u)      setuid((u))
+                                ^
+mg.c:1785:7: warning: implicit declaration of function 'setgid' is invalid in C99 [-Wimplicit-function-declaration]
+(void)PerlProc_setgid(PL_gid);
+      ^
+./iperlsys.h:1101:28: note: expanded from macro 'PerlProc_setgid'
+#define PerlProc_setgid(g)      setgid((g))
+                                ^
+mg.c:2059:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+7 warnings generated.
+miniperlmain.c:36:1: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+exit(1);
+^
+miniperlmain.c:36:1: note: include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+1 warning generated.
+op.c:2434:1: warning: implicit declaration of function 'qsort' is invalid in C99 [-Wimplicit-function-declaration]
+qsort(cp,i,sizeof(U8*),utf8compare);
+^
+1 warning generated.
+perl.c:116:27: warning: implicitly declaring library function 'malloc' with type 'void *(unsigned long)' [-Wimplicit-function-declaration]
+my_perl=(PerlInterpreter*)PerlMem_malloc(sizeof(PerlInterpreter));
+                          ^
+./iperlsys.h:889:31: note: expanded from macro 'PerlMem_malloc'
+#define PerlMem_malloc(size)            malloc((size))
+                                        ^
+perl.c:116:27: note: include the header <stdlib.h> or explicitly provide a declaration for 'malloc'
+./iperlsys.h:889:31: note: expanded from macro 'PerlMem_malloc'
+#define PerlMem_malloc(size)            malloc((size))
+                                        ^
+perl.c:678:1: warning: implicit declaration of function 'free' is invalid in C99 [-Wimplicit-function-declaration]
+PerlMem_free(aTHXx);
+^
+./iperlsys.h:891:28: note: expanded from macro 'PerlMem_free'
+#define PerlMem_free(buf)               free((buf))
+                                        ^
+perl.c:738:6: warning: incompatible pointer types passing 'int *' to parameter of type 'time_t *' (aka 'long *') [-Wincompatible-pointer-types]
+time(&PL_basetime);
+     ^~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/time.h:118:21: note: passing argument to parameter here
+time_t time(time_t *);
+                    ^
+perl.c:1077:15: warning: implicit declaration of function 'chdir' is invalid in C99 [-Wimplicit-function-declaration]
+        if (cddir && PerlDir_chdir(cddir) < 0)
+                     ^
+./iperlsys.h:517:32: note: expanded from macro 'PerlDir_chdir'
+#  define PerlDir_chdir(name)           chdir((name))
+                                        ^
+perl.c:1860:2: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+        PerlProc_exit(0);
+        ^
+./iperlsys.h:1083:26: note: expanded from macro 'PerlProc_exit'
+#define PerlProc_exit(s)        exit((s))
+                                ^
+perl.c:1860:2: note: include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+./iperlsys.h:1083:26: note: expanded from macro 'PerlProc_exit'
+#define PerlProc_exit(s)        exit((s))
+                                ^
+perl.c:2132:5: warning: implicit declaration of function 'getpid' is invalid in C99 [-Wimplicit-function-declaration]
+    ABORT();            /* for use with undump */
+    ^
+./unixish.h:90:22: note: expanded from macro 'ABORT'
+#define ABORT() kill(PerlProc_getpid(),SIGABRT);
+                     ^
+./iperlsys.h:1110:27: note: expanded from macro 'PerlProc_getpid'
+#define PerlProc_getpid()       getpid()
+                                ^
+perl.c:2267:18: warning: implicit declaration of function 'atoi' is invalid in C99 [-Wimplicit-function-declaration]
+            *fdscript = atoi(s);
+                        ^
+perl.c:3015:26: warning: implicit declaration of function 'getpid' is invalid in C99 [-Wimplicit-function-declaration]
+sv_setiv(GvSV(tmpgv),(IV)PerlProc_getpid());
+                         ^
+./iperlsys.h:1110:27: note: expanded from macro 'PerlProc_getpid'
+#define PerlProc_getpid()       getpid()
+                                ^
+8 warnings generated.
+perly.c:1423:8: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+if (yyn=yydefred[yystate]) goto yyreduce;
+    ~~~^~~~~~~~~~~~~~~~~~
+perly.c:1423:8: note: place parentheses around the assignment to silence this warning
+if (yyn=yydefred[yystate]) goto yyreduce;
+       ^
+    (                    )
+perly.c:1423:8: note: use '==' to turn this assignment into an equality comparison
+if (yyn=yydefred[yystate]) goto yyreduce;
+       ^
+       ==
+1 warning generated.
+pp.c:1554:7: warning: implicit declaration of function 'srand' is invalid in C99 [-Wimplicit-function-declaration]
+(void)seedDrand01((Rand_seed_t)seed());
+      ^
+./uconfig.h:2505:24: note: expanded from macro 'seedDrand01'
+#define seedDrand01(x)  srand((Rand_seed_t)x)   /**/
+                        ^
+pp.c:1557:10: warning: implicit declaration of function 'rand' is invalid in C99 [-Wimplicit-function-declaration]
+value *= Drand01();
+         ^
+./uconfig.h:2503:22: note: expanded from macro 'Drand01'
+#define Drand01()               ((rand() & 0x7FFF) / (double) ((unsigned long)1 << 15))         /**/
+                                  ^
+pp.c:1569:7: warning: implicit declaration of function 'srand' is invalid in C99 [-Wimplicit-function-declaration]
+(void)seedDrand01((Rand_seed_t)anum);
+      ^
+./uconfig.h:2505:24: note: expanded from macro 'seedDrand01'
+#define seedDrand01(x)  srand((Rand_seed_t)x)   /**/
+                        ^
+pp.c:1624:4: warning: implicit declaration of function 'open' is invalid in C99 [-Wimplicit-function-declaration]
+fd=PerlLIO_open(PERL_RANDOM_DEVICE,0);
+   ^
+./iperlsys.h:802:34: note: expanded from macro 'PerlLIO_open'
+#define PerlLIO_open(file, flag)        open((file), (flag))
+                                        ^
+pp.c:1626:5: warning: implicit declaration of function 'read' is invalid in C99 [-Wimplicit-function-declaration]
+if (PerlLIO_read(fd,&u,sizeof u) != sizeof u)
+    ^
+./iperlsys.h:804:38: note: expanded from macro 'PerlLIO_read'
+#define PerlLIO_read(fd, buf, count)    read((fd), (buf), (count))
+                                        ^
+pp.c:1628:1: warning: implicit declaration of function 'close' is invalid in C99 [-Wimplicit-function-declaration]
+PerlLIO_close(fd);
+^
+./iperlsys.h:785:28: note: expanded from macro 'PerlLIO_close'
+#define PerlLIO_close(fd)               close((fd))
+                                        ^
+pp.c:1641:12: warning: incompatible pointer types passing 'int *' to parameter of type 'time_t *' (aka 'long *') [-Wincompatible-pointer-types]
+(void)time(&when);
+           ^~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/time.h:118:21: note: passing argument to parameter here
+time_t time(time_t *);
+                    ^
+pp.c:1645:21: warning: implicit declaration of function 'getpid' is invalid in C99 [-Wimplicit-function-declaration]
+u += SEED_C3 * (U32)PerlProc_getpid();
+                    ^
+./iperlsys.h:1110:27: note: expanded from macro 'PerlProc_getpid'
+#define PerlProc_getpid()       getpid()
+                                ^
+pp.c:3465:9: warning: implicit declaration of function 'vtohs' is invalid in C99 [-Wimplicit-function-declaration]
+aushort=vtohs(aushort);
+        ^
+pp.c:3498:9: warning: implicit declaration of function 'vtohs' is invalid in C99 [-Wimplicit-function-declaration]
+aushort=vtohs(aushort);
+        ^
+pp.c:3695:8: warning: implicit declaration of function 'vtohl' is invalid in C99 [-Wimplicit-function-declaration]
+aulong=vtohl(aulong);
+       ^
+pp.c:3730:8: warning: implicit declaration of function 'vtohl' is invalid in C99 [-Wimplicit-function-declaration]
+aulong=vtohl(aulong);
+       ^
+pp.c:4408:8: warning: implicit declaration of function 'htovs' is invalid in C99 [-Wimplicit-function-declaration]
+ashort=htovs(ashort);
+       ^
+pp.c:4547:8: warning: implicit declaration of function 'htovl' is invalid in C99 [-Wimplicit-function-declaration]
+aulong=htovl(aulong);
+       ^
+14 warnings generated.
+pp_ctl.c:100:18: warning: implicit conversion from 'long' to 'int' changes value from 9223372036854775807 to -1 [-Wconstant-conversion]
+PL_reginterp_cnt=I32_MAX; /* Mark as safe. */
+                ~^~~~~~~
+./handy.h:146:18: note: expanded from macro 'I32_MAX'
+# define I32_MAX PERL_LONG_MAX
+                 ^~~~~~~~~~~~~
+./perl.h:1251:35: note: expanded from macro 'PERL_LONG_MAX'
+#    define PERL_LONG_MAX        ((long) (PERL_ULONG_MAX >> 1))
+                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+pp_ctl.c:2410:1: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+JMPENV_JUMP(ret);
+^
+./scope.h:325:20: note: expanded from macro 'JMPENV_JUMP'
+if ((v) == 2)      \
+                   ^
+./iperlsys.h:1083:26: note: expanded from macro '\
+PerlProc_exit'
+#define PerlProc_exit(s)        exit((s))
+                                ^
+pp_ctl.c:2410:1: note: include the header <stdlib.h> or explicitly provide a declaration for 'exit'
+./scope.h:325:20: note: expanded from macro 'JMPENV_JUMP'
+if ((v) == 2)      \
+                   ^
+./iperlsys.h:1083:26: note: expanded from macro '\
+PerlProc_exit'
+#define PerlProc_exit(s)        exit((s))
+                                ^
+2 warnings generated.
+pp_hot.c:849:7: warning: implicit declaration of function 'setuid' is invalid in C99 [-Wimplicit-function-declaration]
+(void)PerlProc_setuid(PL_uid);
+      ^
+./iperlsys.h:1100:28: note: expanded from macro 'PerlProc_setuid'
+#define PerlProc_setuid(u)      setuid((u))
+                                ^
+pp_hot.c:878:7: warning: implicit declaration of function 'setgid' is invalid in C99 [-Wimplicit-function-declaration]
+(void)PerlProc_setgid(PL_gid);
+      ^
+./iperlsys.h:1101:28: note: expanded from macro 'PerlProc_setgid'
+#define PerlProc_setgid(g)      setgid((g))
+                                ^
+2 warnings generated.
+pp_sys.c:1417:8: warning: implicit declaration of function 'read' is invalid in C99 [-Wimplicit-function-declaration]
+length=PerlLIO_read(PerlIO_fileno(IoIFP(io)),
+       ^
+./iperlsys.h:804:38: note: expanded from macro 'PerlLIO_read'
+#define PerlLIO_read(fd, buf, count)    read((fd), (buf), (count))
+                                        ^
+pp_sys.c:1554:8: warning: implicit declaration of function 'write' is invalid in C99 [-Wimplicit-function-declaration]
+retval=PerlLIO_write(PerlIO_fileno(IoIFP(io)),
+       ^
+./iperlsys.h:811:39: note: expanded from macro 'PerlLIO_write'
+#define PerlLIO_write(fd, buf, count)   write((fd), (buf), (count))
+                                        ^
+pp_sys.c:2760:4: warning: implicit declaration of function 'atoi' is invalid in C99 [-Wimplicit-function-declaration]
+fd=atoi(tmps);
+   ^
+pp_sys.c:2763:5: warning: implicit declaration of function 'isatty' is invalid in C99 [-Wimplicit-function-declaration]
+if (PerlLIO_isatty(fd))
+    ^
+./iperlsys.h:791:29: note: expanded from macro 'PerlLIO_isatty'
+#define PerlLIO_isatty(fd)              isatty((fd))
+                                        ^
+pp_sys.c:2820:1: warning: add explicit braces to avoid dangling else [-Wdangling-else]
+else
+^
+pp_sys.c:2822:5: warning: implicitly declaring library function 'abort' with type 'void (void) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+if (PerlIO_get_cnt(IoIFP(io)) <= 0) {
+    ^
+./perlsdio.h:108:29: note: expanded from macro 'PerlIO_get_cnt'
+#define PerlIO_get_cnt(f)               (abort(),0)
+                                         ^
+pp_sys.c:2822:5: note: include the header <stdlib.h> or explicitly provide a declaration for 'abort'
+./perlsdio.h:108:29: note: expanded from macro 'PerlIO_get_cnt'
+#define PerlIO_get_cnt(f)               (abort(),0)
+                                         ^
+pp_sys.c:2954:8: warning: implicit declaration of function 'chdir' is invalid in C99 [-Wimplicit-function-declaration]
+PUSHi( PerlDir_chdir(tmps) >= 0 );
+       ^
+./iperlsys.h:517:32: note: expanded from macro 'PerlDir_chdir'
+#  define PerlDir_chdir(name)           chdir((name))
+                                        ^
+pp_sys.c:3032:7: warning: implicit declaration of function 'unlink' is invalid in C99 [-Wimplicit-function-declaration]
+(void)UNLINK(tmps2);
+      ^
+./perl.h:1946:16: note: expanded from macro 'UNLINK'
+#define UNLINK PerlLIO_unlink
+               ^
+./iperlsys.h:809:31: note: expanded from macro 'PerlLIO_unlink'
+#define PerlLIO_unlink(file)            unlink((file))
+                                        ^
+pp_sys.c:3033:12: warning: implicit declaration of function 'link' is invalid in C99 [-Wimplicit-function-declaration]
+if (!(anum=link(tmps,tmps2)))
+           ^
+pp_sys.c:3390:10: warning: implicit declaration of function 'fork' is invalid in C99 [-Wimplicit-function-declaration]
+childpid=fork();
+         ^
+pp_sys.c:3396:26: warning: implicit declaration of function 'getpid' is invalid in C99 [-Wimplicit-function-declaration]
+sv_setiv(GvSV(tmpgv),(IV)PerlProc_getpid());
+                         ^
+./iperlsys.h:1110:27: note: expanded from macro 'PerlProc_getpid'
+#define PerlProc_getpid()       getpid()
+                                ^
+pp_sys.c:3478:5: warning: implicit declaration of function 'pipe' is invalid in C99 [-Wimplicit-function-declaration]
+if (PerlProc_pipe(pp) >= 0)
+    ^
+./iperlsys.h:1099:27: note: expanded from macro 'PerlProc_pipe'
+#define PerlProc_pipe(fd)       pipe((fd))
+                                ^
+pp_sys.c:3480:18: warning: implicit declaration of function 'fork' is invalid in C99 [-Wimplicit-function-declaration]
+while ((childpid=vfork()) == -1) {
+                 ^
+pp_sys.c:109:18: note: expanded from macro 'vfork'
+#   define vfork fork
+                 ^
+pp_sys.c:3486:1: warning: implicit declaration of function 'close' is invalid in C99 [-Wimplicit-function-declaration]
+PerlLIO_close(pp[0]);
+^
+./iperlsys.h:785:28: note: expanded from macro 'PerlLIO_close'
+#define PerlLIO_close(fd)               close((fd))
+                                        ^
+pp_sys.c:3491:1: warning: implicit declaration of function 'sleep' is invalid in C99 [-Wimplicit-function-declaration]
+sleep(5);
+^
+pp_sys.c:3495:1: warning: implicit declaration of function 'close' is invalid in C99 [-Wimplicit-function-declaration]
+PerlLIO_close(pp[1]);
+^
+./iperlsys.h:785:28: note: expanded from macro 'PerlLIO_close'
+#define PerlLIO_close(fd)               close((fd))
+                                        ^
+pp_sys.c:3514:4: warning: implicit declaration of function 'read' is invalid in C99 [-Wimplicit-function-declaration]
+n1=PerlLIO_read(pp[0],
+   ^
+./iperlsys.h:804:38: note: expanded from macro 'PerlLIO_read'
+#define PerlLIO_read(fd, buf, count)    read((fd), (buf), (count))
+                                        ^
+pp_sys.c:3533:1: warning: implicit declaration of function 'close' is invalid in C99 [-Wimplicit-function-declaration]
+PerlLIO_close(pp[0]);
+^
+./iperlsys.h:785:28: note: expanded from macro 'PerlLIO_close'
+#define PerlLIO_close(fd)               close((fd))
+                                        ^
+pp_sys.c:3547:1: warning: implicitly declaring library function '_exit' with type 'void (int) __attribute__((noreturn))' [-Wimplicit-function-declaration]
+PerlProc__exit(-1);
+^
+./iperlsys.h:1084:27: note: expanded from macro 'PerlProc__exit'
+#define PerlProc__exit(s)       _exit((s))
+                                ^
+pp_sys.c:3547:1: note: include the header <unistd.h> or explicitly provide a declaration for '_exit'
+./iperlsys.h:1084:27: note: expanded from macro 'PerlProc__exit'
+#define PerlProc__exit(s)       _exit((s))
+                                ^
+pp_sys.c:3731:14: warning: incompatible pointer types passing 'int *' to parameter of type 'time_t *' (aka 'long *') [-Wincompatible-pointer-types]
+XPUSHi( time(Null(Time_t*)) );
+~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+./handy.h:19:20: note: expanded from macro 'Null'
+#define Null(type) ((type)NULL)
+                   ^
+./pp.h:168:52: note: expanded from macro 'XPUSHi'
+#define XPUSHi(i)       STMT_START { sv_setiv(TARG, (IV)(i)); XPUSHTARG; } STMT_END
+                                                         ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/time.h:118:21: note: passing argument to parameter here
+time_t time(time_t *);
+                    ^
+pp_sys.c:3785:12: warning: incompatible pointer types passing 'int *' to parameter of type 'time_t *' (aka 'long *') [-Wincompatible-pointer-types]
+(void)time(&when);
+           ^~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/time.h:118:21: note: passing argument to parameter here
+time_t time(time_t *);
+                    ^
+pp_sys.c:3793:17: warning: incompatible pointer types passing 'int *' to parameter of type 'time_t *' (aka 'long *') [-Wincompatible-pointer-types]
+tmbuf=localtime(&when);
+                ^~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/time.h:114:36: note: passing argument to parameter here
+struct tm *localtime(const time_t *);
+                                   ^
+pp_sys.c:3795:14: warning: incompatible pointer types passing 'int *' to parameter of type 'time_t *' (aka 'long *') [-Wincompatible-pointer-types]
+tmbuf=gmtime(&when);
+             ^~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/time.h:113:33: note: passing argument to parameter here
+struct tm *gmtime(const time_t *);
+                                ^
+pp_sys.c:3847:12: warning: incompatible pointer types passing 'int *' to parameter of type 'time_t *' (aka 'long *') [-Wincompatible-pointer-types]
+(void)time(&lasttime);
+           ^~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/time.h:118:21: note: passing argument to parameter here
+time_t time(time_t *);
+                    ^
+pp_sys.c:3849:1: warning: implicit declaration of function 'sleep' is invalid in C99 [-Wimplicit-function-declaration]
+PerlProc_pause();
+^
+./iperlsys.h:1096:26: note: expanded from macro 'PerlProc_pause'
+#define PerlProc_pause()        Pause()
+                                ^
+./perl.h:1626:17: note: expanded from macro 'Pause'
+#define Pause() sleep((32767<<16)+32767)
+                ^
+pp_sys.c:3854:12: warning: incompatible pointer types passing 'int *' to parameter of type 'time_t *' (aka 'long *') [-Wincompatible-pointer-types]
+(void)time(&when);
+           ^~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/time.h:118:21: note: passing argument to parameter here
+time_t time(time_t *);
+                    ^
+26 warnings generated.
+regcomp.c:310:2: error: '#' is not followed by a macro parameter
+#define vWARN2(loc, m, a1)                                                   \
+ ^
+regcomp.c:311:12: error: expected parameter declarator
+STMT_START { \
+           ^
+regcomp.c:311:12: error: expected ')'
+regcomp.c:310:78: note: to match this '('
+#define vWARN2(loc, m, a1)                                                   \
+                                                                             ^
+./perl.h:252:29: note: expanded from macro '\
+STMT_START'
+#   define STMT_START   (void)( /* gcc supports ``({ STATEMENTS; })'' */
+                              ^
+regcomp.c:316:11: error: expected function body after function declarator
+} STMT_END
+          ^
+regcomp.c:863:1: warning: implicit declaration of function 'vWARN' is invalid in C99 [-Wimplicit-function-declaration]
+vWARN(PL_regcomp_parse,
+^
+regcomp.c:923:1: error: use of undeclared identifier 'clear_re'; did you mean 'clearerr'?
+FAIL("Panic opt close");
+^
+regcomp.c:197:18: note: expanded from macro 'FAIL'
+SAVEDESTRUCTOR_X(clear_re,(void*)PL_regcomp_rx); \
+                 ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdio.h:142:7: note: 'clearerr' declared here
+void     clearerr(FILE *);
+         ^
+regcomp.c:1280:1: error: use of undeclared identifier 'clear_re'; did you mean 'clearerr'?
+vFAIL("Variable length lookbehind not implemented");
+^
+regcomp.c:244:18: note: expanded from macro 'vFAIL'
+SAVEDESTRUCTOR_X(clear_re,(void*)PL_regcomp_rx); \
+                 ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdio.h:142:7: note: 'clearerr' declared here
+void     clearerr(FILE *);
+         ^
+regcomp.c:1283:1: error: use of undeclared identifier 'clear_re'; did you mean 'clearerr'?
+vFAIL2("Lookbehind longer than %"UVuf" not implemented",(UV)U8_MAX);
+^
+regcomp.c:263:18: note: expanded from macro 'vFAIL2'
+SAVEDESTRUCTOR_X(clear_re,(void*)PL_regcomp_rx); \
+                 ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdio.h:142:7: note: 'clearerr' declared here
+void     clearerr(FILE *);
+         ^
+regcomp.c:560:3: warning: implicit conversion from 'long' to 'int' changes value from 9223372036854775807 to -1 [-Wconstant-conversion]
+? I32_MAX
+  ^~~~~~~
+./handy.h:146:18: note: expanded from macro 'I32_MAX'
+# define I32_MAX PERL_LONG_MAX
+                 ^~~~~~~~~~~~~
+./perl.h:1251:35: note: expanded from macro 'PERL_LONG_MAX'
+#    define PERL_LONG_MAX        ((long) (PERL_ULONG_MAX >> 1))
+                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+regcomp.c:562:24: warning: implicit conversion from 'long' to 'int' changes value from 9223372036854775807 to -1 [-Wconstant-conversion]
+: (I32_MAX < U16_MAX ? I32_MAX : U16_MAX));
+                       ^~~~~~~
+./handy.h:146:18: note: expanded from macro 'I32_MAX'
+# define I32_MAX PERL_LONG_MAX
+                 ^~~~~~~~~~~~~
+./perl.h:1251:35: note: expanded from macro 'PERL_LONG_MAX'
+#    define PERL_LONG_MAX        ((long) (PERL_ULONG_MAX >> 1))
+                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+regcomp.c:1415:1: error: use of undeclared identifier 'clear_re'; did you mean 'clearerr'?
+FAIL("NULL regexp argument");
+^
+regcomp.c:197:18: note: expanded from macro 'FAIL'
+SAVEDESTRUCTOR_X(clear_re,(void*)PL_regcomp_rx); \
+                 ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdio.h:142:7: note: 'clearerr' declared here
+void     clearerr(FILE *);
+         ^
+regcomp.c:1462:1: error: use of undeclared identifier 'clear_re'; did you mean 'clearerr'?
+FAIL("Regexp out of space");
+^
+regcomp.c:197:18: note: expanded from macro 'FAIL'
+SAVEDESTRUCTOR_X(clear_re,(void*)PL_regcomp_rx); \
+                 ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdio.h:142:7: note: 'clearerr' declared here
+void     clearerr(FILE *);
+         ^
+regcomp.c:1485:20: warning: expression result unused [-Wunused-value]
+REGC((U8)REG_MAGIC,(char*) PL_regcode++);
+                   ^       ~~~~~~~~~~~~
+regcomp.c:332:66: note: expanded from macro 'REGC'
+#define REGC(c,s) STMT_START { if (!SIZE_ONLY) *(s) = (c); else (s);} STMT_END
+                                                                 ^
+regcomp.c:1774:1: error: use of undeclared identifier 'clear_re'; did you mean 'clearerr'?
+vFAIL2("Sequence (?%c...) not implemented",(int)paren);
+^
+regcomp.c:263:18: note: expanded from macro 'vFAIL2'
+SAVEDESTRUCTOR_X(clear_re,(void*)PL_regcomp_rx); \
+                 ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdio.h:142:7: note: 'clearerr' declared here
+void     clearerr(FILE *);
+         ^
+regcomp.c:1780:1: error: use of undeclared identifier 'clear_re'; did you mean 'clearerr'?
+FAIL("Sequence (?#... not terminated");
+^
+regcomp.c:197:18: note: expanded from macro 'FAIL'
+SAVEDESTRUCTOR_X(clear_re,(void*)PL_regcomp_rx); \
+                 ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdio.h:142:7: note: 'clearerr' declared here
+void     clearerr(FILE *);
+         ^
+regcomp.c:1786:1: warning: implicit declaration of function 'vWARN' is invalid in C99 [-Wimplicit-function-declaration]
+vWARN(PL_regcomp_parse,"(?p{}) is deprecated - use (??{})");
+^
+regcomp.c:1814:1: error: use of undeclared identifier 'clear_re'; did you mean 'clearerr'?
+vFAIL("Sequence (?{...}) not terminated or not {}-balanced");
+^
+regcomp.c:244:18: note: expanded from macro 'vFAIL'
+SAVEDESTRUCTOR_X(clear_re,(void*)PL_regcomp_rx); \
+                 ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdio.h:142:7: note: 'clearerr' declared here
+void     clearerr(FILE *);
+         ^
+regcomp.c:1834:1: error: use of undeclared identifier 'clear_re'; did you mean 'clearerr'?
+FAIL("Eval-group not allowed at runtime, use re 'eval'");
+^
+regcomp.c:197:18: note: expanded from macro 'FAIL'
+SAVEDESTRUCTOR_X(clear_re,(void*)PL_regcomp_rx); \
+                 ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdio.h:142:7: note: 'clearerr' declared here
+void     clearerr(FILE *);
+         ^
+regcomp.c:1836:1: error: use of undeclared identifier 'clear_re'; did you mean 'clearerr'?
+FAIL("Eval-group in insecure regular expression");
+^
+regcomp.c:197:18: note: expanded from macro 'FAIL'
+SAVEDESTRUCTOR_X(clear_re,(void*)PL_regcomp_rx); \
+                 ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdio.h:142:7: note: 'clearerr' declared here
+void     clearerr(FILE *);
+         ^
+regcomp.c:1863:7: warning: implicit declaration of function 'atoi' is invalid in C99 [-Wimplicit-function-declaration]
+parno=atoi(PL_regcomp_parse++);
+      ^
+regcomp.c:1868:1: error: use of undeclared identifier 'clear_re'; did you mean 'clearerr'?
+vFAIL("Switch condition not recognized");
+^
+regcomp.c:244:18: note: expanded from macro 'vFAIL'
+SAVEDESTRUCTOR_X(clear_re,(void*)PL_regcomp_rx); \
+                 ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdio.h:142:7: note: 'clearerr' declared here
+void     clearerr(FILE *);
+         ^
+regcomp.c:1890:1: error: use of undeclared identifier 'clear_re'; did you mean 'clearerr'?
+vFAIL("Switch (?(condition)... contains too many branches");
+^
+regcomp.c:244:18: note: expanded from macro 'vFAIL'
+SAVEDESTRUCTOR_X(clear_re,(void*)PL_regcomp_rx); \
+                 ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdio.h:142:7: note: 'clearerr' declared here
+void     clearerr(FILE *);
+         ^
+regcomp.c:1902:1: error: use of undeclared identifier 'clear_re'; did you mean 'clearerr'?
+vFAIL2("Unknown switch condition (?(%.2s",PL_regcomp_parse);
+^
+regcomp.c:263:18: note: expanded from macro 'vFAIL2'
+SAVEDESTRUCTOR_X(clear_re,(void*)PL_regcomp_rx); \
+                 ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdio.h:142:7: note: 'clearerr' declared here
+void     clearerr(FILE *);
+         ^
+regcomp.c:1907:1: error: use of undeclared identifier 'clear_re'; did you mean 'clearerr'?
+vFAIL("Sequence (? incomplete");
+^
+regcomp.c:244:18: note: expanded from macro 'vFAIL'
+SAVEDESTRUCTOR_X(clear_re,(void*)PL_regcomp_rx); \
+                 ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdio.h:142:7: note: 'clearerr' declared here
+void     clearerr(FILE *);
+         ^
+regcomp.c:1932:1: error: use of undeclared identifier 'clear_re'; did you mean 'clearerr'?
+vFAIL3("Sequence (%.*s...) not recognized",PL_regcomp_parse-seqstart,seqstart);
+^
+regcomp.c:282:18: note: expanded from macro 'vFAIL3'
+SAVEDESTRUCTOR_X(clear_re,(void*)PL_regcomp_rx); \
+                 ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdio.h:142:7: note: 'clearerr' declared here
+void     clearerr(FILE *);
+         ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+6 warnings and 20 errors generated.
+make: *** [uregcomp.o] Error 1
